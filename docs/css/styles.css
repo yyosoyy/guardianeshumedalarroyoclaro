@@ -10980,12 +10980,12 @@ body {
 }
 
 #mainNav {
-  min-height: 3.5rem;
+  min-height: 1.5rem;
   background-color: #fff;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
-  padding: 0.75rem;
+  padding: 0.50rem;
   color: #64a19d;
   border: 1px solid #64a19d;
 }
@@ -10995,7 +10995,7 @@ body {
 #mainNav .navbar-brand {
   color: #000;
   font-weight: 700;
-  padding: 0.9rem 0;
+  padding: 0.5rem 0;
 }
 #mainNav .navbar-nav .nav-item:hover {
   color: fade(#fff, 80%);
@@ -11015,7 +11015,7 @@ body {
     transition: background-color 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
-    padding: 0.5rem 0;
+    padding: 0.2rem 0;
     color: rgba(255, 255, 255, 0.5);
   }
   #mainNav .nav-link {
