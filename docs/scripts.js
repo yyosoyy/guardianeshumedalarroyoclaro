@@ -5,7 +5,9 @@
 */
 //
 // Scripts
-// 
+// script>
+AOS.init();
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
