@@ -81,3 +81,85 @@ container.addEventListener('mouseenter', () => {
 container.addEventListener('mouseleave', () => {
     card.style.transition = 'transform 0.6s';
 });
+// Global variables for client ID and API key
+var CLIENT_ID = '736661842183-ncdsieqsqt8otvg76d8mds5u5snnkucf.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyDyGnFQeRtQAnCbusyl6ireByLTQ5rVp2c'; // Reemplaza con tu API key
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+// Authorization scopes required by the API; multiple scopes can be included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/calendar.events";
+
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+}
+
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(function () {
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    }, function (error) {
+        console.log(JSON.stringify(error, null, 2));
+    });
+}
+
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        // User is signed in.
+    } else {
+        // User is not signed in.
+    }
+}
+
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+}
+
+function createEvent() {
+    var event = {
+        'summary': 'Reserva de Excursión',
+        'location': 'Arroyo Claro',
+        'description': 'Reserva para participar en una excursión en Arroyo Claro.',
+        'start': {
+            'dateTime': '2024-07-27T09:00:00-07:00',
+            'timeZone': 'America/Los_Angeles'
+        },
+        'end': {
+            'dateTime': '2024-07-27T17:00:00-07:00',
+            'timeZone': 'America/Los_Angeles'
+        },
+        'recurrence': [
+            'RRULE:FREQ=DAILY;COUNT=1'
+        ],
+        'attendees': [
+            {'email': 'lpage@example.com'},
+            {'email': 'sbrin@example.com'}
+        ],
+        'reminders': {
+            'useDefault': false,
+            'overrides': [
+                {'method': 'email', 'minutes': 24 * 60},
+                {'method': 'popup', 'minutes': 10}
+            ]
+        }
+    };
+
+    var request = gapi.client.calendar.events.insert({
+        'calendarId': 'primary',
+        'resource': event
+    });
+
+    request.execute(function(event) {
+        console.log('Event created: ' + event.htmlLink);
+    });
+}

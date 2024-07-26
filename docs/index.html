@@ -23,8 +23,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <link href='https://unpkg.com/fullcalendar@5.11.3/lib/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
-<body id="page-top">
+<body  onload="handleClientLoad()" id="page-top">
     <script>
         AOS.init();
       </script>
@@ -128,7 +132,7 @@
             flex: 1 1 30%;
             box-sizing: border-box;
             padding: 10px;
-            margin-bottom: 70px; /* Agrega más separación entre las tarjetas */
+            margin-bottom: 150px; /* Agrega más separación entre las tarjetas */
         }
         @media (max-width: 768px) {
             .card-container {
@@ -151,11 +155,10 @@
                     <p class="card-description">Interpretación del paisaje, conectar con la naturaleza y aprender a habitar sin contaminar vivir la naturaleza
                         Aprender a habitar sin contaminar</p>
                     <img src="assets/img/a.png" alt="Forest path" class="card-image">
-                    <br>
-                    <hr>
+                
                     <div class="card-actions">
                         <a href="https://ui.aceternity.com/components/3d-card-effect" class="btn btn-secondary">Mas Info →</a>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -166,12 +169,12 @@
                     <h2 class="card-title">Avistajes</h2>
                     <p class="card-description">Es una actividad de silencio y calma para observar aves locales, incluyendo especies en peligro, con binoculares y guías de aves.</p>
                     <img src="assets/img/b.png" alt="Forest path" class="card-image">
-                    <br>
-                    <hr>
+                    
+                    
                     <div class="card-actions">
                         <a href="https://ui.aceternity.com/components/3d-card-effect" class="btn btn-secondary">Mas Info →</a>
                       
-                        <button class="btn btn-primary">Reservar</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -182,12 +185,12 @@
                     <h2 class="card-title">Trekking</h2>
                     <p class="card-description">Hacemos una caminata de baja dificultad destinadas a personas desde 10 años de edad, recorremos 8 km del Humedal </p>
                     <img src="assets/img/c.png" alt="Forest path" class="card-image">
-                    <br>
-                    <hr>
+                    
+
                     <div class="card-actions">
                         
                         <a href="https://ui.aceternity.com/components/3d-card-effect" class="btn btn-secondary">Mas Info →</a>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Reservar</button>
                     
                     </div>
                     
@@ -195,6 +198,47 @@
             </div>
         </div>
     </div>
+    <!-------------------------------------- modal----------------------------------------------------------------------------------- -->
+    <!-- Large modal -->
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <iframe src="https://calendar.google.com/calendar/embed?src=TU_CALENDAR_ID&ctz=YOUR_TIME_ZONE" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+      </div>
+    </div>
+  </div>
+  
+<!-- Small modal -->
+
+    <!-- <div id='calendar'></div>
+    <iframe src="https://calendar.google.com/calendar/embed?src=TU_CALENDAR_ID&ctz=YOUR_TIME_ZONE" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <button id="authorize-button">Authorize</button>
+    <button id="signout-button">Sign Out</button> -->
+<script>
+  function displayCalendar(events) {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: events.map(event => ({
+        title: event.summary,
+        start: event.start.dateTime || event.start.date,
+        end: event.end.dateTime || event.end.date
+      }))
+    });
+    calendar.render();
+  }
+</script>
+
     <script>
         window.addEventListener('DOMContentLoaded', event => {
 
@@ -412,9 +456,12 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script src="scripts.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-          </script>
+        <script src='https://unpkg.com/fullcalendar@5.11.3/lib/main.min.js'></script>
+        <script>AOS.init();</script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+         
     </body>
 </html>
 <!-- partial -->
