@@ -27,6 +27,39 @@
     <link href='https://unpkg.com/fullcalendar@5.11.3/lib/main.min.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+        h1 {
+            font-size: 2rem; /* Ajusta el tamaño según sea necesario */
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff,
+                             0 0 10px #fff,
+                             0 0 15px #fff,
+                             0 0 20px rgb(179, 255, 0),
+                             0 0 30px hwb(32 0% 0%),
+                             0 0 40px hsl(0, 100%, 50%),
+                             0 0 50px hsl(300, 78%, 2%),
+                             0 0 75px hsl(71, 100%, 50%);
+            }
+            100% {
+                text-shadow: 0 0 10px #fff,
+                             0 0 20px #fff,
+                             0 0 30px hsl(300, 43%, 3%),
+                             0 0 40px #d9ff00,
+                             0 0 50px #ff00ff,
+                             0 0 60px #ffc400,
+                             0 0 70px hsl(0, 100%, 50%),
+                             0 0 100px hsl(7, 100%, 50%);
+            }
+        }
+    </style>
 </head>
 <body  onload="handleClientLoad()" id="page-top">
     <script>
@@ -65,15 +98,22 @@
         <section class="about-section text-lg-left" id="about">
             <div  class="d-flex justify-content-center">
             <div data-aos="zoom-out-down"class="text-center" >
-                <h1 class="mx-auto my-0 text-uppercase">Guardianes del Humedal Arroyo Claro</h1>
+                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                    <h1 class="mx-auto my-0">Guardianes del Humedal Arroyo Claro</h1>
+                </div>
                 <h2 class="text-white-50 mx-auto mt-2 mb-5">Descubre el ecoturismo en un entorno natural único.</h2>
                 
             </div>
         </div>
+        
             <div  class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h4 data-aos="fade-right"class="text-white mb-4">  Como guardianes llevamos a cabo las siguientes acciones:</h4>
+                        <br>
+                    
+                        <h4 data-aos="fade-right"class="text-white mb-4">     <br>
+                                                    <br>
+                            <br>Como guardianes llevamos a cabo las siguientes acciones:</h4>
                         <p data-aos="fade-right"class="text-white-50">
                         
                             • Visitas guiadas de educación ambiental. <br>
