@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Descubre el ecoturismo en Arroyo Claro: senderismo, avistaje de aves y trekking en un entorno natural único." />
+    <meta name="author" content="Guardianes del Humedal Arroyo Claro" />
+    <meta name="keywords" content="ecoturismo, turismo ecológico, senderismo, avistaje de aves, trekking, naturaleza, ecología, medio ambiente, conservación, sostenibilidad, actividades al aire libre, turismo responsable, humedales, Arroyo Claro" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Arroyo Claro: Turismo Ecológico y Actividades al Aire Libre" />
+    <meta property="og:description" content="Explora las maravillas naturales de Arroyo Claro con nuestras actividades de ecoturismo, incluyendo senderismo, avistaje de aves y trekking." />
+    <meta property="og:image" content="https://i.postimg.cc/Rhd6hSSV/logo.png" />
+    <meta property="og:url" content="https://guardianeshumedalarroyoclaro.com.ar" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arroyo Claro: Turismo Ecológico y Actividades al Aire Libre" />
+    <meta name="twitter:description" content="Descubre el ecoturismo en Arroyo Claro: senderismo, avistaje de aves y trekking en un entorno natural único." />
+    <meta name="twitter:image" content="https://i.postimg.cc/Rhd6hSSV/logo.png" />
+    <title>Arroyo Claro</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <link href='https://unpkg.com/fullcalendar@5.11.3/lib/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .section-container {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section-container p {
+            font-size: 1.2em;
+        }
+
+        .section-container img {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .section-container .btn {
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+
+        .btn-custom {
+            background-color: #27ae60;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn-custom:hover {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        .gallery-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1050;
+            overflow: auto;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .gallery-grid img {
+            margin: 10px;
+            max-width: 200px;
+            cursor: pointer;
+        }
+
+        .gallery-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .gallery-nav.left {
+            left: 20px;
+        }
+
+        .gallery-nav.right {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body onload="handleClientLoad()" id="page-top">
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" width="75px" alt="Logo guardianeshuemdalarroyoclaro"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item Activate"><a class="nav-link" href="#projects">Senderismo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#avistajeAves"p>Avistaje</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#trekking"p>Trekking</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div id="actividadesCarrusel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#actividadesCarrusel" data-slide-to="0" class="active"></li>
+                <li data-target="#actividadesCarrusel" data-slide-to="1"></li>
+                <li data-target="#actividadesCarrusel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/a.png" class="d-block w-100" alt="Senderismo">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Senderismo</h5>
+                        <p>Explora los mejores senderos de la región.</p>
+                        <a class="btn btn-primary" href="#senderismo">Más información</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/b.png" class="d-block w-100" alt="Avistaje de Aves">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Avistaje de Aves</h5>
+                        <p>Descubre la fauna avícola local.</p>
+                        <a class="btn btn-primary" href="#avistajeAves">Más información</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/c.png" class="d-block w-100" alt="Trekking">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Trekking</h5>
+                        <p>Aventura y naturaleza en su máxima expresión.</p>
+                        <a class="btn btn-primary" href="#trekking">Más información</a>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#actividadesCarrusel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#actividadesCarrusel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="projects" class="projects-section bg-light">
+        <div id="senderismo" class="container section-container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Senderismo</h2>
+                    <p class="section-description">El senderismo en Arroyo Claro te permite explorar los paisajes naturales más hermosos de la región. Con guías expertos, descubrirás la flora y fauna local.</p>
+                    <p>Duración: 3 horas</p>
+                    <p>Dificultad: Media</p>
+                    <a class="btn btn-custom" href="reserva_senderismo.html">Reservar</a>
+                    <a class="btn btn-custom" href="pago_senderismo.html">Pagar</a>
+                    <button class="btn btn-custom" onclick="openGallery('senderismo')"><i class="fas fa-images"></i> Galería</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/img/a.png" class="img-fluid" alt="Senderismo en Arroyo Claro">
+                </div>
+            </div>
+        </div>
+
+        <div id="avistajeAves" class="container section-container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/img/b.png" class="img-fluid" alt="Avistaje de Aves en Arroyo Claro">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Avistaje de Aves</h2>
+                    <p class="section-description">El avistaje de aves en Arroyo Claro ofrece una oportunidad única para observar una gran variedad de especies en su hábitat natural. Con la ayuda de nuestros guías especializados, podrás identificar y aprender sobre las aves más emblemáticas de la región.</p>
+                    <p>Duración: 2 horas</p>
+                    <p>Dificultad: Baja</p>
+                    <a class="btn btn-custom" href="reserva_avistaje.html">Reservar</a>
+                    <a class="btn btn-custom" href="pago_avistaje.html">Pagar</a>
+                    <button class="btn btn-custom" onclick="openGallery('avistaje')"><i class="fas fa-images"></i> Galería</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="trekking" class="container section-container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Trekking</h2>
+                    <p class="section-description">El trekking en Arroyo Claro te lleva a través de caminos más desafiantes, ideales para aquellos que buscan una aventura llena de adrenalina. A lo largo de los 8 km de recorrido, nuestros guías te mostrarán las maravillas del humedal y te enseñarán sobre la importancia de su conservación.</p>
+                    <p>Duración: 4 horas</p>
+                    <p>Dificultad: Media</p>
+                    <a class="btn btn-custom" href="reserva_trekking.html">Reservar</a>
+                    <a class="btn btn-custom" href="pago_trekking.html">Pagar</a>
+                    <button class="btn btn-custom" onclick="openGallery('trekking')"><i class="fas fa-images"></i> Galería</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/img/c.png" class="img-fluid" alt="Trekking en Arroyo Claro">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="gallery" class="gallery-container">
+        <span class="gallery-close" onclick="closeGallery()">&times;</span>
+        <div class="gallery-grid" id="gallery-grid">
+          
+            <!-- Las imágenes de la galería se insertarán aquí dinámicamente -->
+        </div>
+        <span class="gallery-nav left" onclick="prevImage()">&#10094;</span>
+        <span class="gallery-nav right" onclick="nextImage()">&#10095;</span>
+    </div>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50 mt-5">
+        <div class="container px-4 px-lg-5">Copyright &copy; Daniel Videla</div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- SB Forms JS -->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src='https://unpkg.com/fullcalendar@5.11.3/lib/main.min.js'></script>
+    <script>AOS.init();</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        const galleries = {
+            senderismo: [
+                'assets/img/a.png',
+                'assets/img/b.png',
+                'assets/img/c.png',
+            ],
+            avistaje: [
+                'assets/img/a.png',
+                'assets/img/b.png',
+                'assets/img/c.png',
+            ],
+            trekking: [
+                'assets/img/a.png',
+                'assets/img/b.png',
+                'assets/img/c.png',
+            ],
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        function openGallery(type) {
+            currentGallery = galleries[type];
+            const galleryGrid = document.getElementById('gallery-grid');
+            galleryGrid.innerHTML = currentGallery.map((src, index) => `<img src="${src}" onclick="showImage(${index})">`).join('');
+            document.getElementById('gallery').style.display = 'block';
+            showImage(0);
+        }
+
+        function closeGallery() {
+            document.getElementById('gallery').style.display = 'none';
+        }
+
+        function showImage(index) {
+            currentIndex = index;
+            const galleryGrid = document.getElementById('gallery-grid');
+            const images = galleryGrid.querySelectorAll('img');
+            images.forEach(img => img.classList.remove('active'));
+            images[currentIndex].classList.add('active');
+            const mainImage = images[currentIndex].cloneNode();
+            mainImage.classList.add('main-image');
+            galleryGrid.innerHTML = '';
+            galleryGrid.appendChild(mainImage);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            showImage(currentIndex);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            showImage(currentIndex);
+        }
+    </script>
+</body>
+
+</html>
