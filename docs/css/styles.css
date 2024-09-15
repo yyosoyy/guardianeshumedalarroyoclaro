@@ -1763,7 +1763,7 @@ progress {
 
 .table-group-divider {
   border-top: 2px solid currentcolor;
-}
+}F
 
 .caption-top {
   caption-side: top;
@@ -11268,3 +11268,5 @@ body {
 .btn:hover {
   opacity: 0.8;
 }
+/* Preguntas frecuentes  */
+/* Estilos para la sección de preguntas frecuentes */

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="faq-styles.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                <img src="assets/img/logo.png" alt="Logo" class="logo-icon">
+            </a>
+            <div class="navbar-menu" id="navbar-menu">
+                <a class="navbar-item " href="index.html">Inicio</a>
+                <a class="navbar-item active" href="#custom-faq-section">Preguntas Frecuentes</a>
+                <a class="navbar-item" href="Excursiones.html">Excursiones</a>
+            </div>
+            <button class="navbar-toggler" onclick="toggleMenu()">
+                <span class="menu-text">Menú</span>
+                <span class="menu-icon">&#9776;</span> <!-- Icono de hamburguesa -->
+            </button>
+        </div>
+    </nav>
+    <section id="custom-faq-section">
+        <div id="custom-faq-background">
+            <div id="custom-faq-title">Preguntas Frecuentes</div>
+
+            <div id="custom-faq-container">
+                <div class="custom-faq-card">
+                    <div class="custom-faq-question" onclick="toggleCustomAnswer('custom-answer-1')"
+                        aria-expanded="false" aria-controls="custom-answer-1">
+                        ¿QUIÉNES HABITAMOS EL HUMEDAL? <span class="toggle-icon" id="icon-1">+</span>
+                    </div>
+                    <div class="custom-faq-answer" id="custom-answer-1" role="region"
+                        aria-labelledby="custom-faq-question-1">
+                        LISTA DE ESPECIES QUE HEMOS PODIDO OBSERVAR EN ARROYOCLARO
+                        :
+                        <ul>
+                            <li> Garza Bruja</li>
+                            <li>Carpinteros</li>
+                            <li>Turkas</li>
+                            <li>Pikito de Plata</li>
+                            <li> Martineta común. (Eudromia elegans) a.</li>
+                            <li> Coludito copetón. (Leptasthenura platensis) a y b.</li>
+                            <li>Viudita común ♂ (Knipolegus aterrimus) a y b.</li>
+                            <li> Picaflor andino ♀ ó ♁ (Oreotrochilus leucopleurus) b y c.</li>
+                            <li>Cóndor andino ♂ (Vultur gryphus) b y c.</li>
+                            <li>Ratona común o Pititorra. ...</li>
+                            <li>Comesebo andino o Teste boquense ♂ ...</li>
+                            <li> Loica común ♂</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="custom-faq-card">
+                    <div class="custom-faq-question" onclick="toggleCustomAnswer('custom-answer-2')"
+                        aria-expanded="false" aria-controls="custom-answer-2">
+                        ¿Quiénes habitaron en el pasado y cuál es la enorme herencia? <span class="toggle-icon"
+                            id="icon-2">+</span>
+                    </div>
+                    <div class="custom-faq-answer" id="custom-answer-2" role="region"
+                        aria-labelledby="custom-faq-question-2">
+                        Senderos Huarpes
+                        Leyendas Barrialinas
+                        Recorridos SanMartinianos
+
+                    </div>
+                </div>
+                <div class="custom-faq-card">
+                    <div class="custom-faq-question" onclick="toggleCustomAnswer('custom-answer-3')"
+                        aria-expanded="false" aria-controls="custom-answer-3">
+                        ¿Cómo ayudamos al Humedal?<span class="toggle-icon" id="icon-3">+</span>
+                    </div>
+                    <div class="custom-faq-answer" id="custom-answer-3" role="region"
+                        aria-labelledby="custom-faq-question-3">
+                        Lo defendemos del fuego
+                        Limpiezas Colectivas
+                        Forestaciones
+                        Viveros de Nativas
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="custom-footer">
+        <p>Desarrollado por <a href="https://danielvidela.github.io/Porfolio/" target="_blank" id="portfolio-link">Daniel Videla</a></p>
+        <p>&copy; Guardianes del Arroyo Claro</p>
+    </footer>
+    <script src="faq-scripts.js"></script>
+
+
+
+
+
+</body>
+
+</html>

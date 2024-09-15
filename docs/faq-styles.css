@@ -1,0 +1,220 @@
+/* Estilos para el menú de navegación */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco transparente */
+    border-bottom: 1px solid #ddd; /* Línea sutil en la parte inferior */
+    position: absolute; /* Fija el menú en la parte superior */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+    padding: 0; /* Elimina el padding por defecto */
+    backdrop-filter: blur(10px); /* Aplica un desenfoque de fondo para mejorar la legibilidad */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos a los bordes */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 14px 16px;
+}
+
+.logo-icon {
+    width: 50px; /* Tamaño del icono */
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-item {
+    color: #333; /* Color del texto */
+    text-align: center; /* Alinea el texto */
+    padding: 14px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Transición suave en el hover */
+}
+
+.navbar-item:hover {
+    background-color: #f4f4f4; /* Color de fondo al pasar el ratón */
+}
+
+.navbar-item.active {
+    background-color: #063d21; /* Color de fondo para el enlace activo */
+    color: #45f08c; /* Color del texto activo */
+}
+
+.navbar-toggler {
+    display: none; /* Oculta el botón por defecto */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.menu-text {
+    display: none; /* Oculta el texto en pantallas grandes */
+}
+
+/* Adaptabilidad en móviles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column; /* Apila los elementos verticalmente */
+        position: absolute;
+        top: 60px; /* Ajusta la posición del menú */
+        right: 0;
+        background-color: #fff; /* Color de fondo blanco */
+        width: 100%;
+        border-bottom: 1px solid #ddd; /* Línea sutil en la parte inferior */
+    }
+
+    .navbar-menu.show {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .navbar-toggler {
+        display: block; /* Muestra el botón en móviles */
+    }
+
+    .menu-text {
+        display: inline; /* Muestra el texto "Menú" en móviles */
+    }
+
+    .menu-icon {
+        font-size: 24px; /* Tamaño del icono de hamburguesa */
+    }
+
+    .navbar-item {
+        padding: 14px;
+        text-align: center; /* Alinea el texto al centro en móviles */
+    }
+}
+
+/* Espaciado superior para el contenido de la sección */
+#custom-faq-section {
+    margin-top: 50px; /* Ajusta este valor si es necesario */
+}
+
+/* Estilos para la sección de preguntas frecuentes */
+#custom-faq-section {
+    padding: 40px 0;
+}
+
+#custom-faq-background {
+    background-image: url('../assets/img/bg_p_frecuentes.png'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
+    min-height: 768px; /* Asegura una altura mínima acorde con la imagen */
+    text-align: center;
+}
+
+#custom-faq-title {
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de texto para mejorar el contraste */
+}
+
+#toggle-all {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del botón para mejor visibilidad */
+}
+
+#toggle-all:hover {
+    background-color: hsla(128, 100%, 35%, 0.192);
+}
+
+#custom-faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.custom-faq-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-faq-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-faq-question {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c5f7c3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra de texto para el contraste */
+}
+
+.custom-faq-answer {
+    margin-top: 10px;
+    font-size: 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+    color: #70ec58;
+    text-align: left;
+}
+
+.custom-faq-answer.show {
+    max-height: 200px; /* Ajusta según el contenido */
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.toggle-icon {
+    font-size: 25px;
+    transition: transform 0.3s ease;
+    font: bold;
+}
+
+/* Adaptabilidad en móviles */
+@media (max-width: 768px) {
+    #custom-faq-title {
+        font-size: 30px;
+    }
+
+    .custom-faq-question {
+        font-size: 25px;
+    }
+
+    .custom-faq-answer {
+        font-size: 20px;
+    }
+}
+
+/* Estilos para el footer */
+#custom-footer {
+    background-color: rgba(0, 0, 0, 1); /* Fondo oscuro para el footer */
+    color: #fff; /* Texto blanco */
+    padding: 2px; /* Espaciado interior */
+    text-align: center; /* Centra el texto */
+    position: fixed; /* Posición relativa */
+    bottom: 0;
+    width: 100%;
+    box-shadow: 1 2px 20px rgba(48, 194, 4, 0.384); /* Sombra sutil para resaltar el footer */
+}
+
+/* Espaciado inferior del contenido principal para evitar que el footer se superponga */
+body {
+    margin: 0;
+    padding: 0px;
+    padding-bottom: 1px; /* Ajusta este valor si es necesario para asegurar que el footer no se superponga */
+}
